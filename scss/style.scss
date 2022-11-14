@@ -1,0 +1,142 @@
+@import 'fonts';
+@import 'vars';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'TT Lakes', sans-serif;
+  color: $text;
+  background-color: $bg;
+}
+
+.container{
+  margin-right:16px; 
+  }
+  
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+
+
+.title {
+  border-top: 1px solid $up-border;
+  margin-bottom: 16px;
+  background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+
+  &__text {
+    margin: 0;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    font-weight: normal;
+    color: $text;
+    text-transform: uppercase;
+  }
+}
+
+.cards {
+  &__item {
+    margin-right: 16px;
+    padding: 0 16px;
+    width: 240px;
+    height: 72px;
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1px solid $bt-border;
+  background-color: white;
+  cursor: pointer;
+}
+
+.button {
+  width: 38px;
+  height: 38px;
+  border: 2px solid $dropdown;
+  border-radius: 20px;
+  background: url(../img/dropdown.svg) center no-repeat;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.card:hover > .button {
+  background-color: rgba($color: $dropdown, $alpha: 0.25);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.show-more {
+  display: none;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.show-more:hover {
+  color: $dropdown;
+  transition: color 0.25s ease;
+}
+
+.show-more::before {
+  content: url(../img/expand.svg);
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  transition: transform 0.5s;
+}
+
+.show-more--active::before {
+  transform: rotate(-180deg);
+  transition: transform 0.5s;
+}
+
+.fade {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 24px;
+  background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+}
+
+.swiper-container {
+  padding-left: 16px;
+  padding-bottom: 24px;
+}
+
+.swiper-wrapper {
+  position: static;
+  margin-bottom: 16px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #dddddd;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  margin: 0 12px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #b5b6bc;
+}
+
+@import 'media';
